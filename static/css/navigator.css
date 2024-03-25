@@ -1,0 +1,34 @@
+/*убираем отступы у всех объектов*/
+* {margin:0;
+    padding:0;
+}
+
+/*работа со списком вверху страницы*/
+#nav-main {
+	padding-left: 100px;
+    list-style-type: none;
+    height: 60px;
+    background: #1c1a12;
+    float: left;
+}
+/*работа с текстом списка вверху страницы*/
+#nav-main li a{
+    font-size: 18px;
+    text-decoration: none;
+    color: #fafafa;
+    display: block;
+    text-align: center;
+    float: left;
+    width: 260px;
+    padding: 11px;
+    padding-bottom: 11px;
+}
+/*изменение цвета при наведении на текст*/
+#nav-main li a:hover{
+    color: #e8a110;
+}
+
+#up-page {
+background: #333;
+
+}
