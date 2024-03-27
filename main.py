@@ -9,5 +9,10 @@ def main_page():
     return render_template('main.html', title='Мята Platinum Белорусская')
 
 
+@app.route('/menu')
+def menu_page():
+    return render_template('menu.html')
+
+
 if __name__ == '__main__':
     app.run()
