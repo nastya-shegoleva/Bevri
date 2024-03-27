@@ -1,11 +1,17 @@
+* {margin:0 ;
+padding:0;
+}
 #foto-logo {
 width: 100%;
 height: 50%;
-
+margin:0 ;
 }
 #circle-foto {
-    margin-top: 17%;
+    margin-top: 14%;
     margin-left: 7%;
+}
+#circle-foto-text{
+    background: #1c1a12;
 }
 
 #menu {
@@ -16,9 +22,8 @@ height: 50%;
 }
 
 #menu-logo {
-color: #fafafa;
 margin-left: 9%;
-margin-top: 7%;
+margin-top: 6%;
 }
 
 #menu-content {
@@ -34,5 +39,5 @@ margin-top: 6%;
 
 #foto-menu {
     margin-left: 60%;
-margin-top: -20%;
+margin-top: -20.2%;
 }
