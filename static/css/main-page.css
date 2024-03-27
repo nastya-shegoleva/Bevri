@@ -7,3 +7,32 @@ height: 50%;
     margin-top: 17%;
     margin-left: 7%;
 }
+
+#menu {
+    border: 3px solid #e8a110;
+    widht: 80%;
+    height: 570px;
+    margin: 10%;
+}
+
+#menu-logo {
+color: #fafafa;
+margin-left: 9%;
+margin-top: 7%;
+}
+
+#menu-content {
+color: #fafafa;
+width: 30%;
+margin-left: 10%;
+margin-top: 6%;
+}
+#btn-menu {
+margin-left: 13%;
+margin-top: 6%;
+}
+
+#foto-menu {
+    margin-left: 60%;
+margin-top: -20%;
+}
