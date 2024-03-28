@@ -14,5 +14,10 @@ def menu_page():
     return render_template('menu.html')
 
 
+@app.route('/main_menu')
+def main_menu_page():
+    return render_template('main_menu.html')
+
+
 if __name__ == '__main__':
     app.run()
