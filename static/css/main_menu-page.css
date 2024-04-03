@@ -1,5 +1,4 @@
-* {margin:0 ;
-padding:0;
+* {
 background-color: black;
 }
 h1{
@@ -9,31 +8,18 @@ font-family: cursive;
 text-align: center;
 }
 h2 {
-text-align: left;
 color:#fafafa;
-font-size:30px;
+font-size:25px;
 font-family: cursive;
 }
-#foto-menu {
-width: 50px;
-height: 50px;
-margin:0 ;
-}
-#nav-menu {
-    height: 300px;
-	padding-top: 7px;
-    list-style-type: none;
-    background: transparent;
-    }
-#nav-menu a{
-    font-size: 30px;
-    color: #fafafa;
-    display: block;
-    text-align: left;
-    background:rgba(0, 0, 0, 0);
-    font-style: italic;
-}
-/*изменение цвета при наведении на текст*/
-#nav-menu a:hover{
-    color: #e8a110;
-}
+table.text  {
+    width:  100%; /* Ширина таблицы */
+    border-spacing: 0; /* Расстояние между ячейками */
+   }
+   table.text td {
+    width: 50%; /* Ширина ячеек */
+    vertical-align: top; /* Выравнивание по верхнему краю */
+   }
+   td.rightcol { /* Правая ячейка */
+    text-align: right; /* Выравнивание по правому краю */
+   }

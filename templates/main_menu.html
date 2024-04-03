@@ -8,55 +8,64 @@
             <hr>
         </div>
     </div>
-    <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div>
-            <h2>ЗАКУСКИ</h2>
-            {% for item in snacks %}
-            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
-            {% endfor %}
-        </div>
-    </div>
-    <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5">
-            <h2>САЛАТЫ</h2>
-            {% for item in salads %}
-            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
-            {% endfor %}
-        </div>
-    </div>
-    <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5">
-            <h2>ГОРЯЧИЕ БЛЮДА</h2>
-            {% for item in hot_dishes %}
-            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
-            {% endfor %}
-        </div>
-    </div>
-    <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5">
-            <h2>ПАСТА|ВОК|РИЗОТТО</h2>
-            {% for item in pasta %}
-            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
-            {% endfor %}
-        </div>
-    </div>
-    <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5">
-            <h2>ПИЦЦА</h2>
-            {% for item in pizza %}
-            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
-            {% endfor %}
-        </div>
-    </div>
-    <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5">
-             <h2>ДЕСЕРТЫ</h2>
-            {% for item in desserts %}
-            <div>{{item.name}}   {{item.weight}}г  {{item.price}}р</div>
-            {% endfor %}
-        </div>
-    </div>
+    <table class="text">
+        <tr>
+            <td>
+                <div>
+                    <div style="color: #fafafa">
+                        <h2 class="left">ЗАКУСКИ</h2>
+                        {% for item in snacks %}
+                        <div class="left">{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div style="color: #fafafa">
+                    <div>
+                        <h2>САЛАТЫ</h2>
+                        {% for item in salads %}
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div style="color: #fafafa">
+                    <div>
+                        <h2>ГОРЯЧИЕ БЛЮДА</h2>
+                        {% for item in hot_dishes %}
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </td>
+            <td class="rightcol">
+                <div style="color: #fafafa">
+                    <div>
+                        <h2>ПАСТА|ВОК|РИЗОТТО</h2>
+                        {% for item in pasta %}
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div style="color: #fafafa">
+                    <div>
+                        <h2>ПИЦЦА</h2>
+                        {% for item in pizza %}
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div style="color: #fafafa">
+                    <div>
+                        <h2>ДЕСЕРТЫ</h2>
+                        {% for item in desserts %}
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
 </div>
-</div>
+
 
 {% endblock %}
