@@ -1,72 +1,59 @@
 {% extends 'base.html'%}{% block content %}
-<link rel="stylesheet" href='static/css/main-page.css'/>
+<link rel="stylesheet" href='static/css/main_menu-page.css'/>
 
-<div style="background-image: url('static/img/menu_fon.jpg')" class="container-fluid" >
+<div class="container-fluid">
     <div style="color: #fafafa" class="row d-flex justify-content-center">
         <div class="col-10 pb-5 text-center">
-            <h1>Меню</h1>
+            <h1>ГЛАВНОЕ МЕНЮ</h1>
             <hr>
         </div>
     </div>
     <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5 text-center">
-            <h2 class="text-center quicksand-font text-uppercase">ЗАКУСКИ</h2>
-            <h4 class="text-uppercase">Гренки с чесночным соусом 150г 420р</h4>
-            <h4 class="text-uppercase">Спринг-ролл с овощами 180г 520р</h4>
-            <h4 class="text-uppercase">Брускетта с лососем 2шт./117г 650Р</h4>
-            <h4 class="text-uppercase">Куриные крылья в соусе BBQ 330г 710р</h4>
-            <h4 class="text-uppercase">Пивная тарелка 475г 1050р</h4>
-            <h4 class="text-uppercase">Плато с сыром 240г 1200р</h4>
+        <div>
+            <h2>ЗАКУСКИ</h2>
+            {% for item in snacks %}
+            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+            {% endfor %}
         </div>
     </div>
     <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5 text-center">
-            <h2 class="text-center quicksand-font text-uppercase">САЛАТЫ</h2>
-            <h4 class="text-uppercase">Овощной салат 220г 590р</h4>
-            <h4 class="text-uppercase">Греческий салат 245г 700р</h4>
-            <h4 class="text-uppercase">Капрезе 300г 750Р</h4>
-            <h4 class="text-uppercase">Цезарь с курицей 240г 850р</h4>
-            <h4 class="text-uppercase">Салат с креветками, томатом и авокадо 270г 890р</h4>
+        <div class="col-10 pb-5">
+            <h2>САЛАТЫ</h2>
+            {% for item in salads %}
+            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+            {% endfor %}
         </div>
     </div>
     <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5 text-center">
-            <h2 class="text-center quicksand-font text-uppercase">ГОРЯЧИЕ БЛЮДА</h2>
-            <h4 class="text-uppercase">Бефстроганов 310г 980р</h4>
-            <h4 class="text-uppercase">Телячьи щечки 365г 990р</h4>
-            <h4 class="text-uppercase">Медальоны из телятины 230г 1150р</h4>
-            <h4 class="text-uppercase">Стейк из лосося с овощами 210г 1250р</h4>
-            <h4 class="text-uppercase">Стейк Рибай 300г 3500р</h4>
+        <div class="col-10 pb-5">
+            <h2>ГОРЯЧИЕ БЛЮДА</h2>
+            {% for item in hot_dishes %}
+            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+            {% endfor %}
         </div>
     </div>
     <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5 text-center">
-            <h2 class="text-center quicksand-font text-uppercase">ПАСТА|ВОК|РИЗОТТО</h2>
-            <h4 class="text-uppercase">Спагетти карбонара 320г 850р</h4>
-            <h4 class="text-uppercase">Спагетти болоньезе 290г 850р</h4>
-            <h4 class="text-uppercase">Фетучини с лососем 340г 980Р</h4>
-            <h4 class="text-uppercase">Лапша-вок с морепродуктами 300г 950р</h4>
-            <h4 class="text-uppercase">Ризотто с белыми грибами 310г 920р</h4>
-            <h4 class="text-uppercase">Ризотто с чернилами каракатицы 340г 980р</h4>
+        <div class="col-10 pb-5">
+            <h2>ПАСТА|ВОК|РИЗОТТО</h2>
+            {% for item in pasta %}
+            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+            {% endfor %}
         </div>
     </div>
     <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5 text-center">
-            <h2 class="text-center quicksand-font text-uppercase">ПИЦЦА</h2>
-            <h4 class="text-uppercase">Фокачча 150г 300р</h4>
-            <h4 class="text-uppercase">Маргарита 300г 850р</h4>
-            <h4 class="text-uppercase">Ветчина и грибы 350г 950Р</h4>
-            <h4 class="text-uppercase">Четыре сыра 410г 980р</h4>
+        <div class="col-10 pb-5">
+            <h2>ПИЦЦА</h2>
+            {% for item in pizza %}
+            <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+            {% endfor %}
         </div>
     </div>
     <div style="color: #fafafa" class="row d-flex justify-content-center">
-        <div class="col-10 pb-5 text-center">
-            <h2 class="text-center quicksand-font text-uppercase">ДЕССЕРТЫ</h2>
-            <h4 class="text-uppercase">Мороженое(ваниль|клубника|шоколад) 1шт 280р</h4>
-            <h4 class="text-uppercase">Тирамису 160г 580р</h4>
-            <h4 class="text-uppercase">Чизкейк Сан-Себастьян 145г 590Р</h4>
-            <h4 class="text-uppercase">Шоколадный фондан 170г 750р</h4>
-            <h4 class="text-uppercase">Фруктовая нарезка 1150г 1800р</h4>
+        <div class="col-10 pb-5">
+             <h2>ДЕСЕРТЫ</h2>
+            {% for item in desserts %}
+            <div>{{item.name}}   {{item.weight}}г  {{item.price}}р</div>
+            {% endfor %}
         </div>
     </div>
 </div>

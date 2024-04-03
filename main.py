@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from data import db_session
+from data.main_menu import MAIN_MENU
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -16,8 +18,17 @@ def menu_page():
 
 @app.route('/main_menu')
 def main_menu_page():
-    return render_template('main_menu.html')
+    db_sess = db_session.create_session()
+    pizza = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ПИЦЦА').all()
+    snacks = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ЗАКУСКИ').all()
+    hot_dishes = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ГОРЯЧИЕ БЛЮДА').all()
+    desserts = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ДЕСЕРТЫ').all()
+    salads = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'САЛАТЫ').all()
+    pasta = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ПАСТА|ВОК|РИЗОТТО').all()
+    return render_template('main_menu.html', pizza=pizza, pasta=pasta, hot_dishes=hot_dishes, desserts=desserts,
+                           salads=salads, snacks=snacks)
 
 
 if __name__ == '__main__':
+    db_session.global_init("db/menu.db")
     app.run()
