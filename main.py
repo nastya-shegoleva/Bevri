@@ -29,6 +29,19 @@ def main_menu_page():
                            salads=salads, snacks=snacks)
 
 
+@app.route('/bar_menu')
+def bar_menu_page():
+    db_sess = db_session.create_session()
+    lemon = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ЛИМОНАДЫ').all()
+    kofe = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'КОФЕ').all()
+    tea = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ЧАИ').all()
+    main_kokt = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'АВТОРСКИЕ КОКТЕЙЛИ').all()
+    classic_kokt = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'КЛАССИЧЕСКИЕ КОКТЕЙЛИ').all()
+    nast = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'НАСТОЙКИ').all()
+    return render_template('bar_menu.html', lemon=lemon, kofe=kofe, tea=tea, main_kokt=main_kokt,
+                           classic_kokt=classic_kokt, nast=nast)
+
+
 if __name__ == '__main__':
     db_session.global_init("db/menu.db")
     app.run()

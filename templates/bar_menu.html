@@ -4,7 +4,7 @@
 <div class="container-fluid">
     <div style="color: #fafafa" class="row d-flex justify-content-center">
         <div class="col-10 pb-5 text-center">
-            <h1>ГЛАВНОЕ МЕНЮ</h1>
+            <h1>БАРНОЕ МЕНЮ</h1>
             <hr>
         </div>
     </div>
@@ -13,24 +13,24 @@
             <td class="leftcol">
                 <div>
                     <div style="color: #fafafa">
-                        <h2 class="left">ЗАКУСКИ</h2>
-                        {% for item in snacks %}
+                        <h2 class="left">ЛИМОНАДЫ</h2>
+                        {% for item in lemon %}
                         <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
                         {% endfor %}
                     </div>
                 </div>
                 <div style="color: #fafafa">
                     <div>
-                        <h2>САЛАТЫ</h2>
-                        {% for item in salads %}
+                        <h2>КОФЕ</h2>
+                        {% for item in kofe %}
                         <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
                         {% endfor %}
                     </div>
                 </div>
                 <div style="color: #fafafa">
                     <div>
-                        <h2>ГОРЯЧИЕ БЛЮДА</h2>
-                        {% for item in hot_dishes %}
+                        <h2>ЧАИ</h2>
+                        {% for item in tea %}
                         <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
                         {% endfor %}
                     </div>
@@ -39,24 +39,24 @@
             <td class="rightcol">
                 <div style="color: #fafafa">
                     <div>
-                        <h2>ПАСТА|ВОК|РИЗОТТО</h2>
-                        {% for item in pasta %}
+                        <h2>АВТОРСКИЕ КОКТЕЙЛИ</h2>
+                        {% for item in main_kokt %}
                         <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
                         {% endfor %}
                     </div>
                 </div>
                 <div style="color: #fafafa">
                     <div>
-                        <h2>ПИЦЦА</h2>
-                        {% for item in pizza %}
+                        <h2>КЛАССИЧЕСКИЕ КОКТЕЙЛИ</h2>
+                        {% for item in classic_kokt %}
                         <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
                         {% endfor %}
                     </div>
                 </div>
                 <div style="color: #fafafa">
                     <div>
-                        <h2>ДЕСЕРТЫ</h2>
-                        {% for item in desserts %}
+                        <h2>НАСТОЙКИ</h2>
+                        {% for item in nast %}
                         <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
                         {% endfor %}
                     </div>

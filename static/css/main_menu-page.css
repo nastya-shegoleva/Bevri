@@ -13,13 +13,21 @@ font-size:25px;
 font-family: cursive;
 }
 table.text  {
-    width:  100%; /* Ширина таблицы */
-    border-spacing: 0; /* Расстояние между ячейками */
+    width:  100%;/* Ширина таблицы */
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 70px;
    }
    table.text td {
-    width: 50%; /* Ширина ячеек */
+    width: 50%;
     vertical-align: top; /* Выравнивание по верхнему краю */
    }
+   td.leftcol {
+   text-align: right;
+   border-right: 3px solid white;
+   padding-right: 160px;
+   }
    td.rightcol { /* Правая ячейка */
-    text-align: right; /* Выравнивание по правому краю */
+    text-align: left; /* Выравнивание по правому краю */
+    padding-left: 100px;
    }
