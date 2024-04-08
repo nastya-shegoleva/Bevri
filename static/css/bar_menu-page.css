@@ -1,0 +1,32 @@
+* {
+background-color: black;
+}
+h1{
+color:#fafafa;
+font-size:40px;
+font-family: cursive;
+text-align: center;
+}
+h2 {
+color:#fafafa;
+font-size:25px;
+font-family: cursive;
+}
+table.text  {
+    width:  100%;/* Ширина таблицы */
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 70px;
+   }
+   table.text td {
+    width: 30%;
+    vertical-align: top; /* Выравнивание по верхнему краю */
+   }
+   td.leftcol {
+   text-align: right;
+   border-right: 3px solid white;
+   padding-right: 160px;
+   }
+   td.rightcol { /* Правая ячейка */
+    text-align: left; /* Выравнивание по правому краю */
+    padding-left: 100px;}

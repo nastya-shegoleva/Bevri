@@ -1,5 +1,5 @@
 {% extends 'base.html'%}{% block content %}
-<link rel="stylesheet" href='static/css/main_menu-page.css'/>
+<link rel="stylesheet" href='static/css/bar_menu-page.css'/>
 
 <div class="container-fluid">
     <div style="color: #fafafa" class="row d-flex justify-content-center">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </td>
-            <td class="rightcol">
+            <td class="leftcol">
                 <div style="color: #fafafa">
                     <div>
                         <h2>АВТОРСКИЕ КОКТЕЙЛИ</h2>
@@ -57,6 +57,40 @@
                     <div>
                         <h2>НАСТОЙКИ</h2>
                         {% for item in nast %}
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </td>
+            <td class="rightcol">
+                <div>
+                    <div style="color: #fafafa">
+                        <h2 class="left">ИГРИСТЫЕ ВИНА</h2>
+                        {% for item in game_wine%}
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div style="color: #fafafa">
+                    <div>
+                        <h2>БЕЛЫЕ ВИНА</h2>
+                        {% for item in white_wine%}
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div style="color: #fafafa">
+                    <div>
+                        <h2>КРАСНЫЕ ВИНА</h2>
+                        {% for item in red_wine %}
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div style="color: #fafafa">
+                    <div>
+                        <h2>ВЕРМУТЫ</h2>
+                        {% for item in vermouth%}
                         <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
                         {% endfor %}
                     </div>

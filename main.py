@@ -38,8 +38,14 @@ def bar_menu_page():
     main_kokt = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'АВТОРСКИЕ КОКТЕЙЛИ').all()
     classic_kokt = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'КЛАССИЧЕСКИЕ КОКТЕЙЛИ').all()
     nast = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'НАСТОЙКИ').all()
+    game_wine = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ИГРИСТЫЕ ВИНА').all()
+    white_wine = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'БЕЛЫЕ ВИНА').all()
+    red_wine = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'КРАСНЫЕ ВИНА').all()
+    vermouth = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ВЕРМУТЫ').all()
     return render_template('bar_menu.html', lemon=lemon, kofe=kofe, tea=tea, main_kokt=main_kokt,
-                           classic_kokt=classic_kokt, nast=nast)
+                           classic_kokt=classic_kokt, nast=nast, game_wine=game_wine, white_wine=white_wine,
+                           red_wine=red_wine,
+                           vermouth=vermouth)
 
 
 if __name__ == '__main__':
