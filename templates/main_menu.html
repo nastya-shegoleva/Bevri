@@ -10,12 +10,12 @@
     </div>
     <table class="text">
         <tr>
-            <td class="leftcol">
+            <td>
                 <div>
                     <div style="color: #fafafa">
                         <h2 class="left">ЗАКУСКИ</h2>
                         {% for item in snacks %}
-                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        <div class="left">{{item.name}} {{item.weight}}г {{item.price}}р</div>
                         {% endfor %}
                     </div>
                 </div>

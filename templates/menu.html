@@ -2,17 +2,35 @@
 <link rel="stylesheet" href='static/css/menu-page.css'/>
 
 
-<div style="background-image: url('static/img/menu_fon.jpg')" class="container-fluid">
+<div class="container-fluid" id="main-block">
     <div class="container-fluid" id="nav-menu">
-        <button type="button" class="navbar-toggle" data-toggle="collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="/main_menu">Главное Меню</a></li>
-                <li><a href="/bar_menu">Барная карта</a></li>
-            </ul>
+        <div class="row" id="row-menu">
+            <div class="col-md-4" id="main-menu-foto">
+                <img src="static/img/main-menu-foto.png" alt="main-menu-foto" title="main-menu-foto">
+            </div>
+            <div class="col-md-4" id="main-menu-text">
+                <div>
+                    <h1 style="color: #fafafa; font-size: 40px">Главное меню</h1>
+                </div>
+                <div>
+                    <a class="btn btn-danger btn-md " role="button" href="/main_menu" style="margin-top: 2%">Посмотреть</a>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="row-menu-2">
+
+            <div class="col-md-4" id="main-menu-text-2">
+
+                <div>
+                    <h1 style="color: #fafafa; font-size: 40px">Барное меню</h1>
+                </div>
+                <div>
+                    <a class="btn btn-danger btn-md " role="button" href="/" style="margin-top: 2%">Посмотреть</a>
+                </div>
+            </div>
+            <div class="col-md-4" id="main-menu-foto-2">
+                <img src="static/img/bar-menu-foto.jpg" alt="bar-menu-foto" title="bar-menu-foto">
+            </div>
         </div>
     </div>
 </div>
