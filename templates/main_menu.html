@@ -1,7 +1,7 @@
 {% extends 'base.html'%}{% block content %}
 <link rel="stylesheet" href='static/css/main_menu-page.css'/>
 
-<div class="container-fluid">
+<div class="container-fluid" id="main-menu">
     <div style="color: #fafafa" class="row d-flex justify-content-center">
         <div class="col-10 pb-5 text-center">
             <h1>ГЛАВНОЕ МЕНЮ</h1>
@@ -10,12 +10,12 @@
     </div>
     <table class="text">
         <tr>
-            <td>
+            <td class="leftcol">
                 <div>
                     <div style="color: #fafafa">
                         <h2 class="left">ЗАКУСКИ</h2>
                         {% for item in snacks %}
-                        <div class="left">{{item.name}} {{item.weight}}г {{item.price}}р</div>
+                        <div>{{item.name}} {{item.weight}}г {{item.price}}р</div>
                         {% endfor %}
                     </div>
                 </div>

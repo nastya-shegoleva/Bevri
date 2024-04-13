@@ -61,7 +61,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid" style="margin: 0px; padding: 0px">
+    <div class="container-fluid" style="margin: 0px; padding: 0px; margin-bottom: 200px;">
         <div class="row">
             <div class="col-md-3">
                 <img src="static/img/mini-foto.png" alt="mini-gallery" title="mini-gallery">
@@ -77,9 +77,115 @@
             </div>
         </div>
     </div>
-    <div>
+    <div class="container mx-auto px-4 h-full flex" id="book" style="margin-bottom: 200px">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="static/img/book.png" alt="book">
+            </div>
+            <div class="col-md-6" style="margin-top: 40px">
+                <h1 class="text-6xl font-extrabold mb-4" style="color: #fafafa; font-family: 'Roboto', sans-serif;"
+                    id="text-book">
+                    <b>Забронировать</b></h1>
+                <p class="text-2xl mb-6" style="color: #e8a110" id="text-book-2">проведите этот вечер у нас</p>
+                <a class="btn btn-warning btn-lg font-bold  rounded-full" id="btn-book" role="button" href="/">
+                    посмотреть
+                </a>
+                <div class="container" style="margin-top: 60px; margin-left: 200px;">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <div style="color: #8f8d89">Скидка 10% в день</div>
+                            <div style="color: #8f8d89">рождения и 5 дней после</div>
+                        </div>
+                        <div class="col-md-2">
+                            <img class="tn-atom__img t-img loaded"
+                                 data-original="https://static.tildacdn.com/tild6130-6330-4263-b064-363164663735/promotions-promotion.svg"
+                                 alt="" imgfield="tn_img_1686245286860"
+                                 src="https://static.tildacdn.com/tild6130-6330-4263-b064-363164663735/promotions-promotion.svg"
+                                 style="width: 40px; height: 40px">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-left: 180px; margin-bottom: 50px" class="container" id="maps">
+        <div class="row">
+            <div class="t570__contentwrapper t570__padding_lg col-md-6">
+                <div class="t570__title t-heading t-heading_sm" field="title">
+                    <div style="font-size: 42px; text-align: left;" data-customstyle="yes"><span
+                            style="font-weight: 400; text-align: right; color: #aba9a3">Контакты</span>
+                    </div>
+                </div>
+                <div class="t570__descr t-descr t-descr_xl" field="descr"><a href="#"
+                                                                             style="text-align: right; color: rgb(227, 153, 16); font-family: Oksfree; font-size: 42px;"><small
+                        class="inf-descr"><small
+                >+</small><small
+                >7</small><small
+                > </small><small
+                >(</small><small
+                >9</small><small
+                >1</small><small
+                >7</small><small
+                >)</small><small
+                > </small><small
+                >5</small><small
+                >7</small><small
+                >7</small><small
+                >-</small><small
+                >7</small><small
+                >7</small><small
+                >-</small><small
+                >0</small><small
+                >7</small></small></a><br>
+                    <strong
+                            style="font-family: TildaSans; font-size: 26px; color: #aba9a3">ул. Грузинский Вал, 11, стр.
+                        3,
+                        Москва</strong>
+                </div>
+                <br>
+                <div class="t570__text t-text t-text_sm" field="text">
+                    <div style="font-size: 30px;" data-customstyle="yes"><p style="text-align: left;"><span
+                            style="font-weight: 400; text-align: right; color: #aba9a3">Режим работы:</span></p>
+                        <p style="text-align: left;"><span style="font-weight: 400; text-align: right; color: #aba9a3">Вс-Чт: 12:00 - 02:00</span>
+                        </p>
+                        <p style="text-align: left;"><span style="font-weight: 400; text-align: right; color: #aba9a3">Пт-Сб: 12:00 - 04:00</span>
+                        </p></div>
+                </div>
+
+            </div>
+            <div id="map" class="col-md-6" style="margin-top: -50px">
+
+                <script src="https://api-maps.yandex.ru/2.1/?apikey=40d1649f-0493-4b70-98ba-98533de7710b&lang=ru_RU"
+                        type="text/javascript"></script>
+                <script>
+        ymaps.ready(init);
+        function init(){
+            var myMap = new ymaps.Map("map", {
+                center: [ 55.774289, 37.578981], // Координаты центра карты
+                zoom: 18 // Масштаб карты
+            });
+
+            var myPlacemark = new ymaps.Placemark([ 55.774289, 37.578981], {}, {
+                preset: 'islands#redIcon' // Цвет метки
+            });
+
+            myMap.geoObjects.add(myPlacemark);
+        }
+
+
+
+
+
+
+                </script>
+            </div>
+        </div>
 
     </div>
 
+</div>
 
-    {% endblock %}
+
+{% endblock %}

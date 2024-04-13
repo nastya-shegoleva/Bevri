@@ -41,3 +41,31 @@ margin-top: 6%;
     margin-left: 60%;
 margin-top: -20.2%;
 }
+
+#text-book {
+    position: relative;
+    font-size: 60px
+}
+#text-book-2 {
+    position: relative;
+    margin-top: -15px;
+    margin-left: 280px;
+
+}
+
+#btn-book {
+    border-radius: 20px;
+    background-color: #ebc034;
+    color: black;
+    margin-top: 35px;
+
+}
+
+.inf-descr {
+display: inline;
+ margin: 0px;
+ padding: 0px;
+ font-size: inherit;
+ color: inherit;
+ line-height: inherit;
+}
