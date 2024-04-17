@@ -1,10 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from data import db_session
 from data.main_menu import MAIN_MENU
 from flask_wtf import FlaskForm
 from wtforms import TextAreaField, SubmitField
 from wtforms.validators import DataRequired
 from data.feetback import Feetback
+from data.users import USERS
+from forms.reserv import ReservForm
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -72,6 +75,30 @@ def bar_menu_page():
                            vermouth=vermouth)
 
 
+@app.route('/reserving', methods=['GET', 'POST'])
+def reserv():
+    form = ReservForm()
+    if form.validate_on_submit():
+        db_sess = db_session.create_session()
+        print(form.name.data)
+        if db_sess.query(USERS).filter(USERS.phone_number == f'+7{form.phone.data}').first():
+            return render_template('reserv.html', title='Бронирование',
+                                   form=form,
+                                   message="Вы уже регистрировали столик")
+        user = USERS(
+            name=form.name.data,
+            phone_number=f'+7{form.phone.data}',
+            date=form.date.data,
+            num_of_guests=form.num_of_guests.data,
+            reserv_time=form.reserv_time.data,
+            comment=form.comment.data
+        )
+        db_sess.add(user)
+        db_sess.commit()
+        return redirect('/')
+    return render_template('reserv.html', title='Бронирование', form=form)
+
+
 if __name__ == '__main__':
     db_session.global_init("db/menu.db")
-    app.run(port=8084, host='127.0.0.1')
+    app.run(port=8089, host='127.0.0.1')
