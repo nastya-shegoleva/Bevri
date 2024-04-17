@@ -1,14 +1,38 @@
 from flask import Flask, render_template
 from data import db_session
 from data.main_menu import MAIN_MENU
+from flask_wtf import FlaskForm
+from wtforms import TextAreaField, SubmitField
+from wtforms.validators import DataRequired
+from data.feetback import Feetback
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 
 
-@app.route('/')
+class FeetbackInput(FlaskForm):
+    text = TextAreaField('напиши свой отзыв', validators=[DataRequired()])
+    btn = SubmitField('Отправить')
+
+
+@app.route('/', methods=['GET', 'POST'])
 def main_page():
-    return render_template('main.html', title='Мята Platinum Белорусская')
+    sp_feetback = []
+    feetback = db_session.create_session().query(Feetback).all()
+    sp_feetback.extend(feetback)
+    feetback_all = sorted(sp_feetback, key=lambda x: x.date, reverse=True)
+    sp = []
+    for fb in feetback_all:
+        sp.append([str(fb.date).split()[0], fb.text])
+    form = FeetbackInput()
+    if form.validate_on_submit():
+        session = db_session.create_session()
+        feetback = Feetback()
+        feetback.text = form.text.data
+        session.add(feetback)
+        session.commit()
+    return render_template('main.html', title='Мята Platinum Белорусская', form=form,
+                           feetback=sp)
 
 
 @app.route('/menu')
@@ -50,4 +74,4 @@ def bar_menu_page():
 
 if __name__ == '__main__':
     db_session.global_init("db/menu.db")
-    app.run()
+    app.run(port=8084, host='127.0.0.1')

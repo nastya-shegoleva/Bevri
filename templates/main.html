@@ -178,11 +178,37 @@
 
 
 
-
                 </script>
             </div>
         </div>
 
+    </div>
+    <div>
+        <div>
+            <div class="container">
+                <div><h1 style="color: #fafafa; margin-bottom: 30px;">Оставить отзыв</h1></div>
+                <div>
+                    <form role="form" class="form" method="post">
+                        <div>{{ form.hidden_tag()}}</div>
+                        <div class="form-group">
+                            {{form.text(class="form-control")}}
+                            {{form.btn(class="btn btn-warning btn-lg")}}
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="container" style="margin-left: 250px;margin-bottom: 50px">
+                <div class="row">
+                {% for fb in feetback%}
+                    <div class="col-md-4"  id="feetback-block">
+                        <div style="color: black; padding: 20px; padding-bottom: 5px"><b>{{ fb[0] }}</b></div>
+                        <div style="color: black; padding: 20px; padding-top: 5px;">{{ fb[1] }}</div>
+                    </div>
+                {% endfor %}
+                    </div>
+            </div>
+        </div>
     </div>
 
 </div>
