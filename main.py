@@ -3,7 +3,6 @@ from data import db_session
 from data.main_menu import MAIN_MENU
 from data.users import USERS
 from forms.reserv import ReservForm
-from sqlalchemy_utils import PhoneNumber
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'

@@ -1,63 +1,65 @@
 {% extends "base.html" %}{% block content %}
 <link rel="stylesheet" href='static/css/reserv-page.css'/>
-<h1 style="color:#fafafa">Бронирование</h1>
-<form class=res action="" method="post">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.name.label }}<br>
-        {{ form.name(class="form-group res") }}<br>
-        {% for error in form.name.errors %}
-    <p class="alert alert-danger" role="alert">
-        {{ error }}
-    </p>
-    {% endfor %}
-    </p>
-    <p>
-        {{ form.phone.label }}<br>
-        +7 {{ form.phone(class="TelField res", type="tel") }}<br>
-        {% for error in form.phone.errors %}
-    <p class="alert alert-danger" role="alert">
-        {{ error }}
-    </p>
-    {% endfor %}
-    </p>
-    <p>
-        {{ form.date.label }}<br>
-        {{ form.date(class="DateField res") }}<br>
-        {% for error in form.date.errors %}
-    <p class="alert alert-danger" role="alert">
-        {{ error }}
-    </p>
-    {% endfor %}
-    </p>
-    <p>
-        {{ form.num_of_guests.label }}<br>
-        {{ form.num_of_guests(class="form-group res") }}<br>
-        {% for error in form.num_of_guests.errors %}
-    <p class="alert alert-danger" role="alert">
-        {{ error }}
-    </p>
-    {% endfor %}
-    </p>
-    <p>
-        {{ form.reserv_time.label }}<br>
-        {{ form.reserv_time(class="TimeField res") }}<br>
-        {% for error in form.reserv_time.errors %}
-    <p class="alert alert-danger" role="alert">
-        {{ error }}
-    </p>
-    {% endfor %}
-    </p>
-    <p>
-        {{ form.comment.label }}<br>
-        {{ form.comment(class="form-group res") }}<br>
-        {% for error in form.comment.errors %}
-    <p class="alert alert-danger" role="alert">
-        {{ error }}
-    </p>
-    {% endfor %}
-    </p>
-    <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
-    {{message}}
-</form>
+<div class="container-fluid">
+    <h1 style="color:#fafafa">Бронирование</h1>
+    <form class="text" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(class="form-group res") }}<br>
+            {% for error in form.name.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.phone.label }}<br>
+            +7 {{ form.phone(class="TelField res", type="tel") }}<br>
+            {% for error in form.phone.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.date.label }}<br>
+            {{ form.date(class="DateField res") }}<br>
+            {% for error in form.date.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.num_of_guests.label }}<br>
+            {{ form.num_of_guests(class="form-group res") }}<br>
+            {% for error in form.num_of_guests.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.reserv_time.label }}<br>
+            {{ form.reserv_time(class="TimeField res") }}<br>
+            {% for error in form.reserv_time.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>
+            {{ form.comment.label }}<br>
+            {{ form.comment(class="form-group res") }}<br>
+            {% for error in form.comment.errors %}
+        <p class="alert alert-danger" role="alert">
+            {{ error }}
+        </p>
+        {% endfor %}
+        </p>
+        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        {{message}}
+    </form>
+</div>
 {% endblock %}
