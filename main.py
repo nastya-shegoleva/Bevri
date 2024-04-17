@@ -2,7 +2,8 @@ from flask import Flask, render_template, redirect
 from data import db_session
 from data.main_menu import MAIN_MENU
 from data.users import USERS
-from forms.reserv import ReservForm, TelephoneForm
+from forms.reserv import ReservForm
+from sqlalchemy_utils import PhoneNumber
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -50,35 +51,28 @@ def bar_menu_page():
                            vermouth=vermouth)
 
 
-'''@app.route('/reserving')
-def reserv():
-    return render_template('reserv.html')
-'''
-
-
 @app.route('/reserving', methods=['GET', 'POST'])
 def reserv():
-    form1, form2 = ReservForm(), TelephoneForm
-    if form1.validate_on_submit() and form1.validate_on_submit():
+    form = ReservForm()
+    if form.validate_on_submit():
         db_sess = db_session.create_session()
-        if db_sess.query(USERS).filter(USERS.name == form1.name.data).first():
+        print(form.name.data)
+        if db_sess.query(USERS).filter(USERS.phone_number == f'+7{form.phone.data}').first():
             return render_template('reserv.html', title='Бронирование',
-                                   form=form1,
+                                   form=form,
                                    message="Вы уже регистрировали столик")
         user = USERS(
-            name=form1.name.data,
-            phone_country_code=form2.country_code.data,
-            _phone_number=form2.number,
-            phone=form1.phone,
-            date=form1.date.data,
-            num_of_guests=form1.num_of_guests.data,
-            reserv_time=form1.reserv_time.data,
-            comment=form1.comment
-            )
+            name=form.name.data,
+            phone_number=f'+7{form.phone.data}',
+            date=form.date.data,
+            num_of_guests=form.num_of_guests.data,
+            reserv_time=form.reserv_time.data,
+            comment=form.comment.data
+        )
         db_sess.add(user)
         db_sess.commit()
         return redirect('/')
-    return render_template('reserv.html', title='Бронирование', form=form1)
+    return render_template('reserv.html', title='Бронирование', form=form)
 
 
 if __name__ == '__main__':
