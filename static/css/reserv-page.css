@@ -1,9 +1,10 @@
 * {
-background-color: black;
 text-align: center;
 }
 .res{
-border: 1px solid orange;}
+border: 1px solid orange;
+background-color: black;
+}
 
 .text{
 color:#fafafa;
