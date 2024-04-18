@@ -1,6 +1,6 @@
 {% extends "base.html" %}{% block content %}
 <link rel="stylesheet" href='static/css/reserv-page.css'/>
-<div class="container-fluid">
+<div style="background-color:black;" class="container-fluid">
     <h1 style="color:#fafafa">Бронирование</h1>
     <form class="text" method="post">
         {{ form.hidden_tag() }}
@@ -58,7 +58,7 @@
         </p>
         {% endfor %}
         </p>
-        <p>{{ form.submit(type="submit", class="btn btn-primary") }}</p>
+        <p>{{ form.submit(type="submit", class="btn btn-warning btn-md", role="button") }}</p>
         {{message}}
     </form>
 </div>
