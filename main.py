@@ -101,4 +101,4 @@ def reserv():
 
 if __name__ == '__main__':
     db_session.global_init("db/menu.db")
-    app.run(port=8089, host='127.0.0.1')
+    app.run(port=8097, host='127.0.0.1')
