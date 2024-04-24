@@ -71,7 +71,7 @@ def bar_menu_page():
     vermouth = db_sess.query(MAIN_MENU).filter(MAIN_MENU.type == 'ВЕРМУТЫ').all()
     return render_template('bar_menu.html', lemon=lemon, kofe=kofe, tea=tea, main_kokt=main_kokt,
                            classic_kokt=classic_kokt, nast=nast, game_wine=game_wine, white_wine=white_wine,
-                           red_wine=red_wine,
+                               red_wine=red_wine,
                            vermouth=vermouth)
 
 
@@ -101,4 +101,4 @@ def reserv():
 
 if __name__ == '__main__':
     db_session.global_init("db/menu.db")
-    app.run(port=8089, host='127.0.0.1')
+    app.run(port=8095, host='127.0.0.1')
